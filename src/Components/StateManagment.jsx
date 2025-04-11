@@ -1,18 +1,24 @@
-import React,{ useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
 
 const StateManagment = () => {
-  const [name, setName] = useState('tewo');
-  const [clicked, setClicked] = useState(false);
 
-  const handleButton = () => {
-     setName('tewodros Shimels');
-    setClicked(true)
+  const [count , setCount] = useState(0);
+
+  const increment = () => {
+    setCount( preNo => preNo + 1);
+    
   };
+  
+  const Decreament = () => {
+    setCount(preno => preno - 1);
+  }
   return (
+
     <div>
-      <h2>Name of employes</h2>
-      <p>the system admine name is :{name}</p>
-        To see full name:<button onClick={handleButton} disabled={clicked}>Clicked Me</button>
+        <h1>Count number from :{count}</h1>
+        <button onClick={increment}>Add</button>
+        <button onClick={Decreament}>Dicrease</button>
     </div>
   )
 }
@@ -66,7 +72,6 @@ const stateManagmenet = () => {
     const updateName = () =>{
         setName('tewo Shimels');
         setButtonClicked(true);
-
     }
   return (
     <div>
